@@ -204,43 +204,43 @@ export const experience = [
 export const TopNavoptionLink = [
   {
     title: "CONTACT",
-    href: "/contact",
+    href: "#contact",
   },
   {
     title: "EXPERIENCE",
-    href: "/experience",
+    href: "#experience",
   },
   {
     title: "PROJECT",
-    href: "/project",
+    href: "#project",
   },
   {
     title: "EDUCATION",
-    href: "/education",
+    href: "#education",
   },
   {
     title: "CERTIFICATIONS",
-    href: "/certipications",
+    href: "#certipications",
   },
   {
     title: "COURSE",
-    href: "/coures",
+    href: "#coures",
   },
   {
     title: "DESIGNATION",
-    href: "/designation",
+    href: "#designation",
   },
   {
     title: "SKILLS",
-    href: "/skills",
+    href: "#skills",
   },
   {
     title: "Description",
-    href: "/description",
+    href: "#description",
   },
   {
     title: "PREVIEW",
-    href: "/preview",
+    href: "#preview",
   },
 ];
 

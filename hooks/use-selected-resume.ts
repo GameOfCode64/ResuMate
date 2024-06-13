@@ -8,6 +8,7 @@ const useSelectedResume = () => {
     resumeID,
     setResumeId,
   };
+  console.log(resumeID);
 };
 
 export default useSelectedResume;

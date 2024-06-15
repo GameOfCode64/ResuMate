@@ -10,16 +10,16 @@ import {
 import { Input } from "./ui/input";
 import { Control, FieldPath } from "react-hook-form";
 import { z } from "zod";
-import { formSchema } from "@/lib/formschema";
+import { contactSchema } from "@/lib/formschema";
 
 interface CustominputProps {
-  control: Control<z.infer<typeof formSchema>>;
-  name: FieldPath<z.infer<typeof formSchema>>;
+  control: Control<z.infer<typeof contactSchema>>;
+  name: FieldPath<z.infer<typeof contactSchema>>;
   placeholder: string;
   label: string;
 }
 
-const Custominput = ({
+const ContCustominput = ({
   control,
   name,
   placeholder,
@@ -46,4 +46,4 @@ const Custominput = ({
   );
 };
 
-export default Custominput;
+export default ContCustominput;

@@ -5,6 +5,9 @@ import { redirect } from "next/navigation";
 
 const ResumeTopNav = async ({ resumeId }: { resumeId: string }) => {
   const resId = resumeId;
+  if (!resId || resId === "") {
+    redirect("/dashboard");
+  }
   const resumas = await db.resume.findMany({
     where: {
       id: resId || "",
@@ -16,7 +19,7 @@ const ResumeTopNav = async ({ resumeId }: { resumeId: string }) => {
   });
 
   return (
-    <div className="px-4 py-4">
+    <div className="py-4">
       {resumas.map((res) => (
         <div key={res.id}>
           <Scroll resumename={res.title} resumeid={res.id} />

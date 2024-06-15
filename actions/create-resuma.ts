@@ -13,12 +13,10 @@ export const createResume = async (params: CreateResumeParams) => {
   const { resumename, domain, experience, userId } = params;
 
   try {
-    // Check if the user exists
     let user = await db.user.findUnique({
       where: { id: userId },
     });
 
-    // If user doesn't exist, create one
     if (!user) {
       user = await db.user.create({
         data: {

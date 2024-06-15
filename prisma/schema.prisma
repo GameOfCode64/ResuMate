@@ -13,9 +13,23 @@ model User {
 }
 
 model Resume {
-  id      String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  title   String
-  content String
-  userId  String
-  user    User   @relation(fields: [userId], references: [id])
+  id       String    @id @default(cuid())
+  title    String
+  contacts Contact[]
+  userId   String
+  user     User      @relation(fields: [userId], references: [id])
+}
+
+model Contact {
+  id        String @id @default(cuid())
+  fullname  String
+  email     String
+  linkedin  String
+  portfolio String
+  phoneno   String
+  country   String
+  state     String
+  cite      String
+  resumeId  String
+  resume    Resume @relation(fields: [resumeId], references: [id])
 }

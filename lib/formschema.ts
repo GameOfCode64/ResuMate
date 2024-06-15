@@ -6,3 +6,15 @@ export const formSchema = z.object({
   domain: z.string().nonempty("Domain is required"),
   experience: z.string().nonempty("Experience is required"),
 });
+
+export const contactSchema = z.object({
+  fullname: z.string().optional(),
+  email: z.string().email().optional(),
+  phoneno: z.string().optional(),
+  linkedin: z.string().optional(),
+  portfolio: z.string().optional(),
+  country: z.string().optional(),
+  state: z.string().optional(),
+  cite: z.string().optional(),
+  resumeId: z.string().optional(),
+});

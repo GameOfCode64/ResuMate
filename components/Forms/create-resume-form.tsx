@@ -5,7 +5,7 @@ import { formSchema } from "@/lib/formschema";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useAuth } from "@clerk/nextjs";
-import { useRouter } from "next/navigation";
+import { redirect } from "next/navigation";
 import { Button } from "../ui/button";
 import Custominput from "../Custominput";
 import { Form, FormControl, FormField, FormItem, FormLabel } from "../ui/form";
@@ -27,11 +27,10 @@ interface CreateResumeProps {
 
 const CreateResume = ({ type, title }: CreateResumeProps) => {
   const { userId } = useAuth();
-  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
 
   if (!userId) {
-    router.push("/sign-in");
+    redirect("/sign-in");
     return null;
   }
 
@@ -56,7 +55,7 @@ const CreateResume = ({ type, title }: CreateResumeProps) => {
         userId,
       });
 
-      router.push("/dashboard/resume");
+      redirect("/dashboard/resume");
     } catch (error) {
       console.error("An error occurred:", error);
     } finally {

@@ -17,7 +17,7 @@ const ResumeSidebar = ({
   const { onOpen } = useForm();
   const { onopen } = useProModal();
   return (
-    <div className="w-[90px] bg-[#0000001e] backdrop-blur-md h-screen flex items-center flex-col">
+    <div className="lg:w-[90px] md:w-[130px] hidden md:flex lg:flex bg-[#0000001e] backdrop-blur-md h-screen  items-center flex-col">
       <Link className="mt-6" href="/dashboard">
         <Activity size={29} className="text-[#9254cc] cursor-pointer" />
       </Link>

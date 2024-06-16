@@ -10,7 +10,7 @@ interface FreeProps {
   apiLimiteCount: number;
 }
 const FreeCounter = ({ isPro, apiLimiteCount }: FreeProps) => {
-  const { onOpen } = useProModal();
+  const { onopen } = useProModal();
   return (
     <div className="my-12 w-full h-auto px-4 py-5 bg-[#fff] shadow-md rounded-md">
       <p className=" text-sm text-center font-semibold">
@@ -19,7 +19,7 @@ const FreeCounter = ({ isPro, apiLimiteCount }: FreeProps) => {
       <Progress value={20} className="w-full h-3 mt-3" />
       <Button
         className="mt-3 w-full bg-[#3c0371] hover:bg-[#3c0371]/90"
-        onClick={onOpen}
+        onClick={onopen}
       >
         <Crown className="mr-3 text-[#f4cd00]" />
         Upgrade Now

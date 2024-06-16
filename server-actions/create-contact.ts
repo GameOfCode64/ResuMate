@@ -34,7 +34,22 @@ export async function Contact(data: any) {
       },
     });
 
-    if (contact) {
+    if (contact === null) {
+      const createContact = await db.contact.create({
+        data: {
+          fullname,
+          email,
+          phoneno,
+          linkedin,
+          portfolio,
+          country,
+          state,
+          cite,
+          resumeId,
+        },
+      });
+      return createContact;
+    } else {
       const updatedContact = await db.contact.update({
         where: { id: resumeId },
         data: {
@@ -49,21 +64,6 @@ export async function Contact(data: any) {
         },
       });
       return updatedContact;
-    } else {
-      const newContact = await db.contact.create({
-        data: {
-          fullname,
-          email,
-          phoneno,
-          linkedin,
-          portfolio,
-          country,
-          state,
-          cite,
-          resumeId,
-        },
-      });
-      return newContact;
     }
   } catch (error) {
     console.error("Error in contact form:", error);

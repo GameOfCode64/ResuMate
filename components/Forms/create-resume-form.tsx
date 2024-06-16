@@ -18,7 +18,7 @@ import {
   SelectValue,
 } from "../ui/select";
 import { experience, industries } from "@/constants";
-import { createResume } from "@/actions/create-resuma";
+import { createResume } from "@/server-actions/create-resuma";
 
 interface CreateResumeProps {
   type: "resume" | "cletter" | "rletter";

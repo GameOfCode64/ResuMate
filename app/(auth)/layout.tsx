@@ -1,10 +1,16 @@
 import Image from "next/image";
 import banner from "@/public/MyResumeHub.png";
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const { userId } = auth();
+  if (userId) {
+    redirect("/dashboard");
+  }
   return (
     <div className="flex items-center relative overflow-hidden justify-normal h-screen px-3 gap-8">
       {children}

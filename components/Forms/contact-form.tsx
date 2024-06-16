@@ -21,7 +21,7 @@ import { contrary } from "@/constants";
 import { Button } from "../ui/button";
 import { Loader2 } from "lucide-react";
 import ContCustominput from "../contact-form-custominput";
-import { Contact } from "@/actions/create-contact";
+import { Contact } from "@/server-actions/create-contact";
 
 const ContactForm = ({ resumeId }: { resumeId: string }) => {
   const { userId } = useAuth();

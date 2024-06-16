@@ -9,7 +9,6 @@ interface useFormStore {
 export const useForm = create<useFormStore>((set) => ({
   isOpen: false,
   onOpen: () => {
-    console.log("Opening dialog...");
     set({ isOpen: true });
   },
   onClose: () => set({ isOpen: false }),

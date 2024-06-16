@@ -17,9 +17,11 @@ import React from "react";
 const layout = ({
   children,
   shownav = false,
+  showsidebar = false,
 }: {
   children: React.ReactNode;
   shownav: boolean;
+  showsidebar: boolean;
 }) => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const path = usePathname();
@@ -39,10 +41,12 @@ const layout = ({
   if (path === "/dashboard/resume") {
     shownav = true;
   }
-
+  if (path === "/dashboard" || path === "/dashboard/resume") {
+    showsidebar = true;
+  }
   return (
     <div className="flex items-start justify-normal w-full">
-      <DashboardSidebar apiLimiteCount={0} isPro={false} />
+      <DashboardSidebar apiLimiteCount={0} isPro={false} show={showsidebar} />
       <div className="flex flex-col md:w-[90%] lg:w-[90%] w-full">
         <ResumeModel type="Resume" />
         <ProModal />

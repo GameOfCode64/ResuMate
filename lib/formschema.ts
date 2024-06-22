@@ -18,3 +18,11 @@ export const contactSchema = z.object({
   cite: z.string().optional(),
   resumeId: z.string().optional(),
 });
+
+export const experienceSchema = z.object({
+  role: z.string(),
+  companyName: z.string(),
+  workingDays: z.number(),
+  compunyLocation: z.string(),
+  descripation: z.string(),
+});

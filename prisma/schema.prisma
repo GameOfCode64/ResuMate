@@ -13,11 +13,12 @@ model User {
 }
 
 model Resume {
-  id       String    @id @default(cuid())
-  title    String
-  contacts Contact[]
-  userId   String
-  user     User      @relation(fields: [userId], references: [id])
+  id         String       @id @default(cuid())
+  title      String
+  contacts   Contact[]
+  experience Experience[]
+  userId     String
+  user       User         @relation(fields: [userId], references: [id])
 }
 
 model Contact {
@@ -32,4 +33,15 @@ model Contact {
   cite      String
   resumeId  String
   resume    Resume @relation(fields: [resumeId], references: [id])
+}
+
+model Experience {
+  id              String  @id
+  role            String
+  companyName     String
+  workingDays     Int
+  compunyLocation String
+  descripation    String
+  Resume          Resume? @relation(fields: [resumeId], references: [id])
+  resumeId        String?
 }

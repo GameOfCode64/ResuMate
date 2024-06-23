@@ -5,7 +5,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import Contact from "@/components/Forms/contact-form";
 import Experience from "@/components/Forms/experience-form";
 import Projects from "@/components/Forms/projects-form";
-import Education from "./Forms/education-form";
+import Education from "@/components/Forms/education-form";
+import Certipication from "@/components/Forms/certipications-form";
+import Course from "@/components/Forms/course-form";
 
 const Scroll = ({
   resumename,
@@ -47,8 +49,12 @@ const Scroll = ({
             <TabsContent value="education">
               <Education resumeId={resumeid} />
             </TabsContent>
-            <TabsContent value="certipications">certipications</TabsContent>
-            <TabsContent value="coures">coures</TabsContent>
+            <TabsContent value="certipications">
+              <Certipication resumeId={resumeid} />
+            </TabsContent>
+            <TabsContent value="coures">
+              <Course resumeId={resumeid} />
+            </TabsContent>
             <TabsContent value="designation">designation</TabsContent>
             <TabsContent value="skills">skills</TabsContent>
             <TabsContent value="description">description</TabsContent>

@@ -43,3 +43,33 @@ export const educationSchema = z.object({
   gpa: z.number(),
   descripation: z.string(),
 });
+
+export const certipicationsSchema = z.object({
+  title: z.string(),
+  orgName: z.string(),
+  complitionYear: z.number(),
+  descripation: z.string(),
+});
+
+export const courseSchema = z.object({
+  title: z.string(),
+  orgName: z.string(),
+  complitionYear: z.number(),
+  descripation: z.string(),
+  skillYouLearn: z.string(),
+});
+
+export const designationSchema = z.object({
+  role: z.string(),
+  orgName: z.string(),
+  workingYear: z.number(),
+  location: z.string(),
+  descripation: z.string(),
+});
+
+export const skillSchema = z.object({
+  skillName: z.string(),
+});
+export const descriptionSchema = z.object({
+  description: z.string(),
+});

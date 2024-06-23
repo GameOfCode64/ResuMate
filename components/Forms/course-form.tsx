@@ -1,15 +1,17 @@
 "use client";
+import { z } from "zod";
 import React, { useState } from "react";
+import { useAuth } from "@clerk/nextjs";
+import { courseSchema } from "@/lib/formschema";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import { educationSchema } from "@/lib/formschema";
-import { useAuth } from "@clerk/nextjs";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
 import { ChevronDown, ChevronRight } from "lucide-react";
 import {
   Form,
@@ -18,21 +20,19 @@ import {
   FormItem,
   FormLabel,
 } from "@/components/ui/form";
-import EduCustominput from "@/components/inputs/education-form-custom-input";
-import { Button } from "../ui/button";
-import { Textarea } from "../ui/textarea";
+import CouCustominput from "../inputs/course-form-custom-input";
 
-const Education = ({ resumeId }: { resumeId: string }) => {
+const Course = ({ resumeId }: { resumeId: string }) => {
   const { userId } = useAuth();
   const [isOpen, setIsOpen] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
-  const form = useForm<z.infer<typeof educationSchema>>({
-    resolver: zodResolver(educationSchema),
+  const form = useForm<z.infer<typeof courseSchema>>({
+    resolver: zodResolver(courseSchema),
     defaultValues: {},
   });
 
-  const onSubmit = async (values: z.infer<typeof educationSchema>) => {
+  const onSubmit = async (values: z.infer<typeof courseSchema>) => {
     try {
       setIsLoading(true);
       console.log(values);
@@ -42,50 +42,43 @@ const Education = ({ resumeId }: { resumeId: string }) => {
       setIsLoading(false);
     }
   };
-
   return (
     <div className="full px-1 mt-8">
       <div className="lg:flex inline-block w-full">
         <aside className="w-full lg:w-[400px] md:my-6 px-4 py-3 my-4 lg:mr-8 lg:h-[300px] bg-[#0000001e] rounded-md">
           <Collapsible open={isOpen} onOpenChange={setIsOpen}>
             <CollapsibleTrigger className="flex items-center justify-center gap-2">
-              Your Education {isOpen ? <ChevronRight /> : <ChevronDown />}
+              Your Course {isOpen ? <ChevronRight /> : <ChevronDown />}
             </CollapsibleTrigger>
-            <CollapsibleContent>Add your first Education</CollapsibleContent>
+            <CollapsibleContent>Add your first Course</CollapsibleContent>
           </Collapsible>
         </aside>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
             <div className="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-2 md:gap-8 lg:gap-12 gap-5">
-              <EduCustominput
-                name="degree"
+              <CouCustominput
+                name="title"
+                label="Course Name"
+                placeholder="Full Stack Web devlopment"
                 control={form.control}
-                label="What Your DEGREE / QUALIFICATION"
-                placeholder="Bachelor in computer science"
               />
-              <EduCustominput
-                name="collageName"
+              <CouCustominput
+                name="orgName"
+                label="Where did you take the Course"
+                placeholder="Indian Institute of Computer Science"
                 control={form.control}
-                label="Collage/University Name"
-                placeholder="University of Delhi"
               />
-              <EduCustominput
-                name="location"
-                control={form.control}
-                label="Collage/University Location"
-                placeholder="New Delhi"
-              />
-              <EduCustominput
-                name="passingYear"
-                control={form.control}
-                label="Passing Year"
+              <CouCustominput
+                name="complitionYear"
+                label="When did you get the Certificate?"
                 placeholder="2022"
-              />
-              <EduCustominput
-                name="gpa"
                 control={form.control}
-                label="GPA/Percentage"
-                placeholder="8.9 Or 95%"
+              />
+              <CouCustominput
+                name="skillYouLearn"
+                label="What Skill did You learn?"
+                placeholder="Nodejs, Nextjs, React"
+                control={form.control}
               />
             </div>
             <FormField
@@ -93,7 +86,7 @@ const Education = ({ resumeId }: { resumeId: string }) => {
               name="descripation"
               render={({ field }) => (
                 <FormItem className="mt-4">
-                  <FormLabel>OPEN FIELD FOR ADDITIONAL INFORMATION</FormLabel>
+                  <FormLabel>how was that Skill Applied?</FormLabel>
                   <FormControl>
                     <Textarea
                       placeholder="Tell us a little bit about your Role"
@@ -108,7 +101,7 @@ const Education = ({ resumeId }: { resumeId: string }) => {
               type="submit"
               className="w-full md:w-auto lg:w-auto mt-6 bg-[#9254cc] hover:bg-[#9254cc]/90 md:px-6"
             >
-              Add to Education List
+              Add to Course List
             </Button>
           </form>
         </Form>
@@ -117,4 +110,4 @@ const Education = ({ resumeId }: { resumeId: string }) => {
   );
 };
 
-export default Education;
+export default Course;

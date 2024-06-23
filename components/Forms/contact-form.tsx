@@ -17,12 +17,10 @@ import {
   SelectValue,
 } from "../ui/select";
 import { contrary } from "@/constants";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
-import ContCustominput from "../contact-form-custominput";
+import ContCustominput from "@/components/inputs/contact-form-custominput";
 import { Contact } from "@/server-actions/create-contact";
-import Image from "next/image";
-import banner from "@/public/banner.jpg";
 
 const ContactForm = ({ resumeId }: { resumeId: string }) => {
   const { userId } = useAuth();

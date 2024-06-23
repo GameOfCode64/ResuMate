@@ -1,25 +1,24 @@
 import React from "react";
 import {
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
-} from "./ui/form";
-import { Input } from "./ui/input";
+} from "../ui/form";
+import { Input } from "../ui/input";
 import { Control, FieldPath } from "react-hook-form";
 import { z } from "zod";
-import { experienceSchema } from "@/lib/formschema";
+import { contactSchema } from "@/lib/formschema";
 
 interface CustominputProps {
-  control: Control<z.infer<typeof experienceSchema>>;
-  name: FieldPath<z.infer<typeof experienceSchema>>;
+  control: Control<z.infer<typeof contactSchema>>;
+  name: FieldPath<z.infer<typeof contactSchema>>;
   placeholder: string;
   label: string;
 }
 
-const ExpCustominput = ({
+const ContCustominput = ({
   control,
   name,
   placeholder,
@@ -46,4 +45,4 @@ const ExpCustominput = ({
   );
 };
 
-export default ExpCustominput;
+export default ContCustominput;

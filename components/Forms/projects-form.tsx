@@ -9,11 +9,10 @@ import {
 } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { experienceSchema } from "@/lib/formschema";
+import { projectSchema } from "@/lib/formschema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useAuth } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
-import ExpCustominput from "@/components/inputs/experience-form-custom-input";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Button } from "@/components/ui/button";
 import {
@@ -32,8 +31,9 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
+import ProCustominput from "../inputs/project-form-custom-input";
 
-const Experience = ({ resumeId }: { resumeId: string }) => {
+const Projects = ({ resumeId }: { resumeId: string }) => {
   const { userId } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [isOpen, setIsOpen] = React.useState(true);
@@ -43,12 +43,12 @@ const Experience = ({ resumeId }: { resumeId: string }) => {
     to: addDays(new Date(2022, 0, 20), 20),
   });
 
-  const form = useForm<z.infer<typeof experienceSchema>>({
-    resolver: zodResolver(experienceSchema),
+  const form = useForm<z.infer<typeof projectSchema>>({
+    resolver: zodResolver(projectSchema),
     defaultValues: {},
   });
 
-  const onSubmit = async (values: z.infer<typeof experienceSchema>) => {
+  const onSubmit = async (values: z.infer<typeof projectSchema>) => {
     try {
       setIsLoading(true);
       console.log(values);
@@ -65,40 +65,40 @@ const Experience = ({ resumeId }: { resumeId: string }) => {
         <aside className="w-full lg:w-[400px] md:my-6 px-4 py-3 my-4 lg:mr-8 lg:h-[300px] bg-[#0000001e] rounded-md">
           <Collapsible open={isOpen} onOpenChange={setIsOpen}>
             <CollapsibleTrigger className="flex items-center justify-center gap-2">
-              Your Experience {isOpen ? <ChevronRight /> : <ChevronDown />}
+              Your Projects {isOpen ? <ChevronRight /> : <ChevronDown />}
             </CollapsibleTrigger>
-            <CollapsibleContent>Add your first Experience</CollapsibleContent>
+            <CollapsibleContent>Add your first Project</CollapsibleContent>
           </Collapsible>
         </aside>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
             <div className="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-2 md:gap-8 lg:gap-12 gap-5">
-              <ExpCustominput
-                name="role"
-                placeholder="Backend devloper"
-                label="WHAT WAS YOUR ROLE AT THE COMPANY?"
+              <ProCustominput
+                name="protitle"
+                placeholder="Project Title"
+                label="GIVE YOUR PROJECT A TITLE"
                 control={form.control}
               />
-              <ExpCustominput
-                name="companyName"
+              <ProCustominput
+                name="orgName"
                 placeholder="Mirosoft"
-                label="FOR WHICH COMPANY DID YOU WORK?"
+                label="IN WHICH ORGANIZATION DID YOU DO YOUR PROJECT?"
                 control={form.control}
               />
-              <ExpCustominput
-                name="compunyLocation"
-                placeholder="New York"
-                label="WHERE WAS THE COMPANY LOCATED?"
+              <ProCustominput
+                name="projectUrl"
+                placeholder="https://resumate.ai"
+                label="PROJECT URL"
                 control={form.control}
               />
 
               <FormField
                 control={form.control}
-                name="workingDays"
+                name="workingday"
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="mb-[18px] text-nowrap">
-                      HOW LONG WERE YOU WITH THE COMPANY?
+                      WHEN DID YOU DO YOUR PROJECT?
                     </FormLabel>
                     <Popover>
                       <FormControl>
@@ -151,7 +151,7 @@ const Experience = ({ resumeId }: { resumeId: string }) => {
               render={({ field }) => (
                 <FormItem>
                   <div className="flex items-center justify-between mt-4">
-                    <FormLabel>Role Descripation</FormLabel>
+                    <FormLabel>DESCRIBE WHAT YOU DID</FormLabel>
                     <Button className="flex items-center md:text-sm  justify-center  bg-gradient-to-r from-cyan-500 rounded-3xl to-[#9254cc]">
                       <Activity className="mr-2" /> Generate
                     </Button>
@@ -170,7 +170,7 @@ const Experience = ({ resumeId }: { resumeId: string }) => {
               type="submit"
               className="w-full md:w-auto lg:w-auto mt-6 bg-[#9254cc] hover:bg-[#9254cc]/90 md:px-6"
             >
-              Add to Experience List
+              Add to Project list
             </Button>
           </form>
         </Form>
@@ -179,4 +179,4 @@ const Experience = ({ resumeId }: { resumeId: string }) => {
   );
 };
 
-export default Experience;
+export default Projects;

@@ -17,6 +17,8 @@ model Resume {
   title      String
   contacts   Contact[]
   experience Experience[]
+  project    Project[]
+  education  Education[]
   userId     String
   user       User         @relation(fields: [userId], references: [id])
 }
@@ -44,4 +46,27 @@ model Experience {
   descripation    String
   Resume          Resume? @relation(fields: [resumeId], references: [id])
   resumeId        String?
+}
+
+model Project {
+  id           String  @id
+  protitle     String
+  orgName      String
+  workingday   String
+  projectUrl   String
+  descripation String
+  Resume       Resume? @relation(fields: [resumeId], references: [id])
+  resumeId     String?
+}
+
+model Education {
+  id           String  @id
+  degree       String
+  collageName  String
+  location     String
+  passingYear  Int
+  gpa          Int
+  descripation String
+  Resume       Resume? @relation(fields: [resumeId], references: [id])
+  resumeId     String?
 }

@@ -2,8 +2,10 @@
 import { TopNavoptionLink } from "@/constants";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
-import Contact from "./Forms/contact-form";
-import Experience from "./Forms/experience-form";
+import Contact from "@/components/Forms/contact-form";
+import Experience from "@/components/Forms/experience-form";
+import Projects from "@/components/Forms/projects-form";
+import Education from "./Forms/education-form";
 
 const Scroll = ({
   resumename,
@@ -37,10 +39,14 @@ const Scroll = ({
               <Contact resumeId={resumeid} />
             </TabsContent>
             <TabsContent value="experience" className="mt-8">
-              <Experience />
+              <Experience resumeId={resumeid} />
             </TabsContent>
-            <TabsContent value="project">project</TabsContent>
-            <TabsContent value="education">education</TabsContent>
+            <TabsContent value="project">
+              <Projects resumeId={resumeid} />
+            </TabsContent>
+            <TabsContent value="education">
+              <Education resumeId={resumeid} />
+            </TabsContent>
             <TabsContent value="certipications">certipications</TabsContent>
             <TabsContent value="coures">coures</TabsContent>
             <TabsContent value="designation">designation</TabsContent>

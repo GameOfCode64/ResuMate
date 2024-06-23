@@ -6,20 +6,20 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "./ui/form";
-import { Input } from "./ui/input";
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 import { Control, FieldPath } from "react-hook-form";
 import { z } from "zod";
-import { formSchema } from "@/lib/formschema";
+import { projectSchema } from "@/lib/formschema";
 
 interface CustominputProps {
-  control: Control<z.infer<typeof formSchema>>;
-  name: FieldPath<z.infer<typeof formSchema>>;
+  control: Control<z.infer<typeof projectSchema>>;
+  name: FieldPath<z.infer<typeof projectSchema>>;
   placeholder: string;
   label: string;
 }
 
-const Custominput = ({
+const ProCustominput = ({
   control,
   name,
   placeholder,
@@ -31,7 +31,7 @@ const Custominput = ({
       name={name}
       render={({ field }) => (
         <FormItem>
-          <FormLabel>{label}</FormLabel>
+          <FormLabel className="text-nowrap">{label}</FormLabel>
           <FormControl>
             <Input
               placeholder={placeholder}
@@ -46,4 +46,4 @@ const Custominput = ({
   );
 };
 
-export default Custominput;
+export default ProCustominput;

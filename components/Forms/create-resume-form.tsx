@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useAuth } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 import { Button } from "../ui/button";
-import Custominput from "../Custominput";
+import Custominput from "@/components/inputs/create-resume-custom-input";
 import { Form, FormControl, FormField, FormItem, FormLabel } from "../ui/form";
 import {
   Select,

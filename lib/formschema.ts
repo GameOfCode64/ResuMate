@@ -26,3 +26,20 @@ export const experienceSchema = z.object({
   compunyLocation: z.string(),
   descripation: z.string(),
 });
+
+export const projectSchema = z.object({
+  protitle: z.string(),
+  orgName: z.string(),
+  workingday: z.string(),
+  projectUrl: z.string(),
+  descripation: z.string(),
+});
+
+export const educationSchema = z.object({
+  degree: z.string(),
+  collageName: z.string(),
+  location: z.string(),
+  passingYear: z.number(),
+  gpa: z.number(),
+  descripation: z.string(),
+});

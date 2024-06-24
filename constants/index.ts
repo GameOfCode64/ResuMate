@@ -227,10 +227,6 @@ export const TopNavoptionLink = [
     href: "coures",
   },
   {
-    title: "DESIGNATION",
-    href: "designation",
-  },
-  {
     title: "SKILLS",
     href: "skills",
   },

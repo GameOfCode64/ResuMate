@@ -13,14 +13,18 @@ model User {
 }
 
 model Resume {
-  id         String       @id @default(cuid())
-  title      String
-  contacts   Contact[]
-  experience Experience[]
-  project    Project[]
-  education  Education[]
-  userId     String
-  user       User         @relation(fields: [userId], references: [id])
+  id             String          @id @default(cuid())
+  title          String
+  contacts       Contact[]
+  experience     Experience[]
+  project        Project[]
+  education      Education[]
+  certipications Certipication[]
+  course         Course[]
+  skill          Skill[]
+  description    Description[]
+  userId         String
+  user           User            @relation(fields: [userId], references: [id])
 }
 
 model Contact {
@@ -69,4 +73,38 @@ model Education {
   descripation String
   Resume       Resume? @relation(fields: [resumeId], references: [id])
   resumeId     String?
+}
+
+model Certipication {
+  id             String  @id
+  title          String
+  orgName        String
+  complitionYear Int
+  descripation   String
+  Resume         Resume? @relation(fields: [resumeId], references: [id])
+  resumeId       String?
+}
+
+model Course {
+  id             String  @id
+  title          String
+  orgName        String
+  complitionYear Int
+  descripation   String
+  Resume         Resume? @relation(fields: [resumeId], references: [id])
+  resumeId       String?
+}
+
+model Skill {
+  id        String  @id
+  skillName String
+  Resume    Resume? @relation(fields: [resumeId], references: [id])
+  resumeId  String?
+}
+
+model Description {
+  id        String  @id
+  skillName String
+  Resume    Resume? @relation(fields: [resumeId], references: [id])
+  resumeId  String?
 }

@@ -10,21 +10,16 @@ import {
 import { Input } from "@/components/ui/input";
 import { Control, FieldPath } from "react-hook-form";
 import { z } from "zod";
-import { descriptionSchema } from "@/lib/formschema";
+import { AIdescripation } from "@/lib/formschema";
 
 interface CustominputProps {
-  control: Control<z.infer<typeof descriptionSchema>>;
-  name: FieldPath<z.infer<typeof descriptionSchema>>;
+  control: Control<z.infer<typeof AIdescripation>>;
+  name: FieldPath<z.infer<typeof AIdescripation>>;
   placeholder: string;
   label: string;
 }
 
-const DesCustominput = ({
-  control,
-  name,
-  placeholder,
-  label,
-}: CustominputProps) => {
+const Aiinput = ({ control, name, placeholder, label }: CustominputProps) => {
   return (
     <FormField
       control={control}
@@ -46,4 +41,4 @@ const DesCustominput = ({
   );
 };
 
-export default DesCustominput;
+export default Aiinput;

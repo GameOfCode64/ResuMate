@@ -59,12 +59,9 @@ export const courseSchema = z.object({
   skillYouLearn: z.string(),
 });
 
-export const designationSchema = z.object({
+export const AIdescripation = z.object({
   role: z.string(),
-  orgName: z.string(),
-  workingYear: z.number(),
-  location: z.string(),
-  descripation: z.string(),
+  skill: z.string(),
 });
 
 export const skillSchema = z.object({

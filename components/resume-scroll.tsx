@@ -8,6 +8,8 @@ import Projects from "@/components/Forms/projects-form";
 import Education from "@/components/Forms/education-form";
 import Certipication from "@/components/Forms/certipications-form";
 import Course from "@/components/Forms/course-form";
+import Skills from "@/components/Forms/skill-form";
+import Description from "@/components/Forms/descripation-form";
 
 const Scroll = ({
   resumename,
@@ -55,9 +57,12 @@ const Scroll = ({
             <TabsContent value="coures">
               <Course resumeId={resumeid} />
             </TabsContent>
-            <TabsContent value="designation">designation</TabsContent>
-            <TabsContent value="skills">skills</TabsContent>
-            <TabsContent value="description">description</TabsContent>
+            <TabsContent value="skills">
+              <Skills resumeId={resumeid} />
+            </TabsContent>
+            <TabsContent value="description">
+              <Description resumeId={resumeid} />
+            </TabsContent>
             <TabsContent value="preview">preview</TabsContent>
           </Tabs>
         </div>

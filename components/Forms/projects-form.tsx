@@ -76,13 +76,13 @@ const Projects = ({ resumeId }: { resumeId: string }) => {
               <ProCustominput
                 name="protitle"
                 placeholder="Project Title"
-                label="GIVE YOUR PROJECT A TITLE"
+                label="Project Name"
                 control={form.control}
               />
               <ProCustominput
                 name="orgName"
                 placeholder="Mirosoft"
-                label="IN WHICH ORGANIZATION DID YOU DO YOUR PROJECT?"
+                label="In Which Organization you do Your Project"
                 control={form.control}
               />
               <ProCustominput
@@ -98,7 +98,7 @@ const Projects = ({ resumeId }: { resumeId: string }) => {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="mb-[18px] text-nowrap">
-                      WHEN DID YOU DO YOUR PROJECT?
+                      When did You do Your Project ?
                     </FormLabel>
                     <Popover>
                       <FormControl>
@@ -151,7 +151,7 @@ const Projects = ({ resumeId }: { resumeId: string }) => {
               render={({ field }) => (
                 <FormItem>
                   <div className="flex items-center justify-between mt-4">
-                    <FormLabel>DESCRIBE WHAT YOU DID</FormLabel>
+                    <FormLabel>Describe More about your Project</FormLabel>
                     <Button className="flex items-center md:text-sm  justify-center  bg-gradient-to-r from-cyan-500 rounded-3xl to-[#9254cc]">
                       <Activity className="mr-2" /> Generate
                     </Button>

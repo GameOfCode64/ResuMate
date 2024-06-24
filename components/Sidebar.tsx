@@ -24,12 +24,13 @@ const DashboardSidebar = ({
   const { onOpen } = useForm();
   const path = ["resuma", "cover-letters", "resignation-letters"];
   return (
-    <>
-      <div className={cn(show ? `block` : `hidden`)}>
-        <div
-          className="hidden  lg:flex w-[280px] max-w-[350px] h-[100dvh] px-6
-     py-4 md:flex flex-col bg-[#00000014] backdrop-blur-md shadow-md"
-        >
+    <div
+      className={cn(
+        show ? `w-[280px] hidden md:flex  lg:flex mr-6 md:mr-12` : `hidden`
+      )}
+    >
+      <div className="fixed h-screen">
+        <div className="hidden  lg:flex w-[280px] max-w-[350px] h-full px-6 py-4 md:flex flex-col bg-[#00000014] backdrop-blur-md shadow-md">
           <div className="px-3 py-2 flex gap-3 items-center justify-center">
             <Link href="/dashboard">
               <Activity size={32} className="text-[#9254cc]" />
@@ -64,7 +65,7 @@ const DashboardSidebar = ({
           <FreeCounter apiLimiteCount={apiLimiteCount} isPro={isPro} />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

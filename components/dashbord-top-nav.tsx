@@ -25,7 +25,7 @@ const DashbordTopNav = ({
   }
   const userButtonAppearance = {
     elements: {
-      userButtonAvatarBox: "w-[40px] h-[40px]",
+      userButtonAvatarBox: "w-[40px] h-[40px] md:w-[35px] md:h-[35px]",
     },
   };
   return (
@@ -64,7 +64,7 @@ const DashbordTopNav = ({
               className="data-[state=active]:bg-[#9254cc] data-[state=active]:text-white"
             >
               <Link href="/dashboard/resignation-letters" className="w-full">
-                RESIGNATION LETTERS
+                Resignation Letter
               </Link>
             </TabsTrigger>
           </TabsList>

@@ -16,7 +16,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../ui/select";
+} from "@/components/ui/select";
 import { experience, industries } from "@/constants";
 import { createResume } from "@/server-actions/create-resuma";
 

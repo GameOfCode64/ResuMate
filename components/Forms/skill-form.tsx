@@ -48,9 +48,9 @@ const Skills = ({ resumeId }: { resumeId: string }) => {
         <aside className="w-full lg:w-[400px] md:my-6 px-4 py-3 my-4 lg:mr-8 lg:h-[300px] bg-[#0000001e] rounded-md">
           <Collapsible open={isOpen} onOpenChange={setIsOpen}>
             <CollapsibleTrigger className="flex items-center justify-center gap-2">
-              Your Experience {isOpen ? <ChevronRight /> : <ChevronDown />}
+              Your Skills {isOpen ? <ChevronRight /> : <ChevronDown />}
             </CollapsibleTrigger>
-            <CollapsibleContent>Add your first Experience</CollapsibleContent>
+            <CollapsibleContent>Add your first Skill</CollapsibleContent>
           </Collapsible>
         </aside>
         <Form {...form}>

@@ -32,16 +32,18 @@ const layout = ({
   if (path === "/dashboard/resume") {
     shownav = true;
   }
-  if (path === "/dashboard/resume") {
+  if (path === "/dashboard/cover-letters") {
     shownav = true;
   }
-  if (path === "/dashboard/resume") {
+  if (path === "/dashboard/resignation-letters") {
     shownav = true;
   }
-  if (path === "/dashboard/resume") {
-    shownav = true;
-  }
-  if (path === "/dashboard" || path === "/dashboard/resume") {
+  if (
+    path === "/dashboard" ||
+    path === "/dashboard/resume" ||
+    path === "/dashboard/cover-letters" ||
+    path === "/dashboard/resignation-letters"
+  ) {
     showsidebar = true;
   }
   return (

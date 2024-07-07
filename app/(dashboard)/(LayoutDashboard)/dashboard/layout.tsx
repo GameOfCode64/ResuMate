@@ -1,17 +1,16 @@
 "use client";
-
 import ResumeModel from "@/components/Create-resuma";
 import ProModal from "@/components/Pro-modal";
 import DashboardSidebar from "@/components/Sidebar";
 import DashbordTopNav from "@/components/dashbord-top-nav";
 import DashboardModialNav from "@/components/mobile-navbar";
 import { usePathname } from "next/navigation";
-import React from "react";
+import React, { ReactNode } from "react";
 
 interface LayoutProps {
-  children: React.ReactNode;
-  shownav?: boolean; // made optional with default value
-  showsidebar?: boolean; // made optional with default value
+  children: ReactNode;
+  shownav?: boolean;
+  showsidebar?: boolean;
 }
 
 const Layout: React.FC<LayoutProps> = ({

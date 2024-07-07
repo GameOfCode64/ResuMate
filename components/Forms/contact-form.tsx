@@ -36,15 +36,21 @@ const ContactForm = ({ resumeId }: { resumeId: string }) => {
   const form = useForm<z.infer<typeof contactSchema>>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
-      resumeId: resumeId,
+      fullname: "",
+      email: "",
+      phoneno: "",
+      linkedin: "",
+      portfolio: "",
+      country: "",
+      state: "",
+      cite: "",
     },
   });
 
   const onSubmit = async (values: z.infer<typeof contactSchema>) => {
     try {
       setIsLoading(true);
-      // console.log(values);
-      await Contact(values);
+      await Contact({ resumeId, ...values });
       console.log("Data saved:");
     } catch (error) {
       console.error("An error occurred:", error);
@@ -79,7 +85,7 @@ const ContactForm = ({ resumeId }: { resumeId: string }) => {
             <ContCustominput
               name="linkedin"
               control={form.control}
-              placeholder="https://linkdin.com/user_name"
+              placeholder="https://linkedin.com/user_name"
               label="Linkedin URL"
             />
             <ContCustominput

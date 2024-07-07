@@ -11,11 +11,11 @@ import {
 import { useProModal } from "@/hooks/use-pro-modal";
 
 const ProModal = () => {
-  const { isOpen, onClose, onOpen } = useProModal();
+  const { isOpen, onClose, onopen } = useProModal();
   return (
     <Dialog
       open={isOpen}
-      onOpenChange={(open) => (open ? onOpen() : onClose())}
+      onOpenChange={(open) => (open ? onopen() : onClose())}
     >
       <DialogContent>
         <DialogHeader>

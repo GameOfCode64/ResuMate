@@ -51,7 +51,7 @@ const Experience = ({ resumeId }: { resumeId: string }) => {
   const onSubmit = async (values: z.infer<typeof experienceSchema>) => {
     try {
       setIsLoading(true);
-      console.log(values);
+      console.log(resumeId, values);
     } catch (error) {
       console.error("An error occurred:", error);
     } finally {
@@ -62,9 +62,9 @@ const Experience = ({ resumeId }: { resumeId: string }) => {
   return (
     <div className="full px-1 mt-8">
       <div className="lg:flex inline-block w-full">
-        <aside className="w-full lg:w-[400px] md:my-6 px-4 py-3 my-4 lg:mr-8 lg:h-[300px] bg-[#0000001e] rounded-md">
+        <aside className="w-full lg:w-[400px] md:my-6 px-4 py-3 my-4 lg:mr-8 lg:h-[300px] bg-[#0000001e] backdrop-blur-xl rounded-md">
           <Collapsible open={isOpen} onOpenChange={setIsOpen}>
-            <CollapsibleTrigger className="flex items-center justify-center gap-2">
+            <CollapsibleTrigger className="flex items-center justify-center font-semibold gap-2">
               Your Experience {isOpen ? <ChevronRight /> : <ChevronDown />}
             </CollapsibleTrigger>
             <CollapsibleContent>Add your first Experience</CollapsibleContent>
@@ -75,13 +75,13 @@ const Experience = ({ resumeId }: { resumeId: string }) => {
             <div className="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-2 md:gap-8 lg:gap-12 gap-5">
               <ExpCustominput
                 name="role"
-                placeholder="Backend devloper"
+                placeholder="Backend developer"
                 label="WHAT WAS YOUR ROLE AT THE COMPANY?"
                 control={form.control}
               />
               <ExpCustominput
                 name="companyName"
-                placeholder="Mirosoft"
+                placeholder="Microsoft"
                 label="FOR WHICH COMPANY DID YOU WORK?"
                 control={form.control}
               />
@@ -151,7 +151,7 @@ const Experience = ({ resumeId }: { resumeId: string }) => {
               render={({ field }) => (
                 <FormItem>
                   <div className="flex items-center justify-between mt-4">
-                    <FormLabel>Role Descripation</FormLabel>
+                    <FormLabel>Role Description</FormLabel>
                     <Button className="flex items-center md:text-sm  justify-center  bg-gradient-to-r from-cyan-500 rounded-3xl to-[#9254cc]">
                       <Activity className="mr-2" /> Generate
                     </Button>

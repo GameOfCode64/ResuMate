@@ -60,7 +60,7 @@ const Description = ({ resumeId }: { resumeId: string }) => {
             />
             <Button
               type="submit"
-              className="w-full md:w-auto lg:w-auto mt-6 bg-[#9254cc] hover:bg-[#9254cc]/90 md:px-6"
+              className="w-full md:w-auto lg:w-auto mt-6 bg-[#9254cc] hover:bg-[#9254cc]/80 md:px-6"
             >
               Add Description
             </Button>

@@ -4,32 +4,40 @@ import ProModal from "@/components/Pro-modal";
 import DashboardSidebar from "@/components/Sidebar";
 import DashbordTopNav from "@/components/dashbord-top-nav";
 import DashboardModialNav from "@/components/mobile-navbar";
+import { Metadata } from "next";
 import { usePathname } from "next/navigation";
-import React, { ReactNode } from "react";
+import React from "react";
 
-interface LayoutProps {
-  children: ReactNode;
-  shownav?: boolean;
-  showsidebar?: boolean;
-}
-
-const Layout: React.FC<LayoutProps> = ({
-  children,
-  shownav = false,
-  showsidebar = false,
-}) => {
+let shownav = false;
+let showsidebar = false;
+const layout = ({ children }: { children: React.ReactNode }) => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const path = usePathname();
 
-  if (
-    path === "/dashboard" ||
-    path === "/dashboard/resume" ||
-    path === "/dashboard/cover-letters" ||
-    path === "/dashboard/resignation-letters"
-  ) {
+  if (path === "/dashboard") {
     shownav = true;
+  }
+  if (path === "/dashboard/resume") {
+    shownav = true;
+  }
+  if (path === "/dashboard/cover-letters") {
+    shownav = true;
+  }
+  if (path === "/dashboard/resignation-letters") {
+    shownav = true;
+  }
+  if (path === "/dashboard") {
     showsidebar = true;
   }
-
+  if (path === "/dashboard/resume") {
+    showsidebar = true;
+  }
+  if (path === "/dashboard/cover-letters") {
+    showsidebar = true;
+  }
+  if (path === "/dashboard/resignation-letters") {
+    showsidebar = true;
+  }
   return (
     <div className="flex items-start justify-normal w-full">
       <DashboardSidebar apiLimiteCount={0} isPro={false} show={showsidebar} />
@@ -44,4 +52,4 @@ const Layout: React.FC<LayoutProps> = ({
   );
 };
 
-export default Layout;
+export default layout;

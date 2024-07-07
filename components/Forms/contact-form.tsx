@@ -20,7 +20,6 @@ import { contrary } from "@/constants";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import ContCustominput from "@/components/inputs/contact-form-custominput";
-import { Contact } from "@/server-actions/create-contact";
 
 const ContactForm = ({ resumeId }: { resumeId: string }) => {
   const { userId } = useAuth();
@@ -50,7 +49,7 @@ const ContactForm = ({ resumeId }: { resumeId: string }) => {
   const onSubmit = async (values: z.infer<typeof contactSchema>) => {
     try {
       setIsLoading(true);
-      await Contact({ resumeId, ...values });
+      // await Contact({ resumeId, ...values });
       console.log("Data saved:");
     } catch (error) {
       console.error("An error occurred:", error);

@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { z } from "zod";
+import { string, z } from "zod";
 import { formSchema } from "@/lib/formschema";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";

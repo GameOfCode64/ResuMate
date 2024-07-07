@@ -29,7 +29,6 @@ export const createResume = async (params: CreateResumeParams) => {
     const resume = await db.resume.create({
       data: {
         title: resumename,
-        content: `Domain: ${domain}, Experience: ${experience}`,
         userId,
       },
     });

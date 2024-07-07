@@ -35,7 +35,7 @@ const DashboardSidebar = ({
             <Link href="/dashboard">
               <Activity size={32} className="text-[#9254cc]" />
             </Link>
-            <p className="font-[600] text-[22px]">Resuma.AI</p>
+            <p className="font-[600] text-[22px]">ResuMate.AI</p>
           </div>
           <Button
             onClick={onOpen}

@@ -1,5 +1,11 @@
-import Image from "next/image";
+import HomePage from "@/components/Home";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
-  return <div>main page</div>;
+  return (
+    <div className="w-full bg-[#05080b] h-screen">
+      <Navbar />
+      <HomePage />
+    </div>
+  );
 }

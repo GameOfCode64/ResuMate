@@ -20,14 +20,14 @@ export default function RootLayout({
           <br /> ResuMate!
         </h3>
         <p className="text-[12px] mt-4 text-zinc-600">
-          ResuMa AI powered Resume Builder. Using ResuMate build your future,
+          ResuMate! AI powered Resume Builder. Using ResuMate build your future,
           <br /> get your dream job ❤️
         </p>
-        <div className="mt-4 w-full h-full  border-zinc-500 border-t-[8px] border-l-[8px] rounded-2xl">
+        <div className="mt-4 w-full h-full">
           <Image
             src={banner}
             alt="login-img"
-            className="w-[120%] absolute h-[750px]"
+            className="w-[120%] absolute h-[750px] rounded-md"
           />
         </div>
       </div>

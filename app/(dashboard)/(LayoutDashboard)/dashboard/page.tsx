@@ -15,7 +15,7 @@ const page = () => {
         </div>
         <div className="flex items-center justify-center flex-col">
           <p className=" font-[600]  md:text-[22px] lg:text-[22px] text-[17px] text-nowrap text-zinc-700 mt-4 ">
-            let&apos;s Build Your future with Resuma!
+            let&apos;s Build Your future with ResuMate!
           </p>
           <Link href="/dashboard/resume">
             <Button className="mt-4 bg-[#3c0371] hover:bg-[#3c0371]/90">

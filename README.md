@@ -1,36 +1,20 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+'This Project is Under Devlopment'
+# ResuMate-AI is Modern Resume builder AI
+` ResuMate! AI powered Resume Builder. Using ResuMate build your future,
+get your dream job ❤️`
 
-## Getting Started
 
-First, run the development server:
+# Landing Page
+![MyResumeHub (3)](https://github.com/GameOfCode64/ResuMate/assets/131631135/22fd17c9-f342-42c4-88c7-511b06b42b5f)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# Login Screen
+![MyResumeHub (4)](https://github.com/GameOfCode64/ResuMate/assets/131631135/1611f42a-8612-4a58-bd40-4c9f17c2e361)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Dashboard page
+![MyResumeHub](https://github.com/GameOfCode64/ResuMate/assets/131631135/96244f68-a703-464c-aac0-e50fe7b2581a)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Create Resume
+![MyResumeHub (1)](https://github.com/GameOfCode64/ResuMate/assets/131631135/49c94893-5ae3-4c42-92f5-c4f15a4eaf72)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+# Add Details Page
+![MyResumeHub (2)](https://github.com/GameOfCode64/ResuMate/assets/131631135/d8df8cc6-f64e-4a4b-91b5-a02df2c5b755)

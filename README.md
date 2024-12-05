@@ -1,4 +1,4 @@
-'This Project is Under Devlopment'
+'This Project is Under Development'
 # ResuMate-AI is Modern Resume builder AI
 ` ResuMate! AI powered Resume Builder. Using ResuMate build your future,
 get your dream job ❤️`
